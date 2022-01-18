@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@drawable/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_pperson"
+            />
+
+        <TextView
+            android:id="@+id/topText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
+            android:text=" Silahkan Mendaftar Akun"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/topView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="16dp"
+            android:hint="nama"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <EditText
+            android:id="@+id/alamat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_home_"
+            android:drawablePadding="16dp"
+            android:hint="alamat"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nama" />
+        <EditText
+            android:id="@+id/nomer_telepon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="16dp"
+            android:hint="nomer telepon"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alamat" />
+        <EditText
+            android:id="@+id/jenis_kelamin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="16dp"
+            android:hint="jenis kelamin"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nomer_telepon" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="16dp"
+            android:hint="username"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jenis_kelamin" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="16dp"
+            android:hint="password"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
+
+        <Button
+            android:id="@+id/btnRegist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/colorPrimary1"
+            android:text="Simpan"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

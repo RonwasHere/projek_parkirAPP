@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8ECFA"
+    tools:context=".Admin.SpinnerTunjActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="197dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="36dp"
+        android:padding="30dp"
+        android:text="Pilih Bulan"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/et_tampil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="nama"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="184dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="212dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:backgroundTint="@color/teal_200"
+        android:id="@+id/hasil"
+        android:text="HASIL"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_width="171dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5sp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:contentPadding="20dp"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="#E3EAEF"
+
+        android:id="@+id/cv_tiket">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Mall"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NAMA MAll"
+                    android:id="@+id/tv_nama_mall"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Plat Nomer  ">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" PLAT NOMER"
+                    android:id="@+id/tv_plat"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Lantai   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LANTAI "
+                    android:id="@+id/tv_lantai"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Hari   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HARI "
+                    android:id="@+id/tv_hari"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Tanggal   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TANGGAL "
+                    android:id="@+id/tv_tanggal"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Jam masuk   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="JAM MASUK"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"
+                    android:id="@+id/tv_jammasuk"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Jam keluar   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="JAM KELUAR"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"
+                    android:id="@+id/tv_jamkeluar"/>
+            </LinearLayout>
+            <!--Harga tiket-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Harga   "
+                    android:layout_weight="1">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Harga"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:padding="10dp"
+                    android:id="@+id/tv_harga"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/tv_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24">
+            </ImageButton>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</ScrollView>

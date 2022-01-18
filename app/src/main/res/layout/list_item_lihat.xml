@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:cardBackgroundColor="#E3EAEF"
+        app:contentPadding="20dp"
+        app:cardCornerRadius="40dp"
+        android:id="@+id/cv_mall">
+
+        <RelativeLayout
+            android:id="@+id/rl_mall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivGambarMall"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NAMA MAll"
+                        android:id="@+id/tv_nama_mall"
+                        android:textSize="25dp"
+                        android:textColor="#000"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama_mall"
+                        android:text=" Kapasitas"
+                        android:id="@+id/tv_kapasitas"
+                        android:textSize="25dp"
+                        android:textColor="#000"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_kapasitas"
+                        android:text="Alamat "
+                        android:id="@+id/tv_alamat"
+                        android:textSize="25dp"
+                        android:textColor="#000"
+                        android:padding="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/tv_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear1"
+                android:src="@drawable/ic_baseline_delete_24">
+            </ImageButton>
+
+            <Button
+                android:id="@+id/tv_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_delete"
+                android:backgroundTint="#00BCD4"
+                android:text="EDIT">
+            </Button>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>

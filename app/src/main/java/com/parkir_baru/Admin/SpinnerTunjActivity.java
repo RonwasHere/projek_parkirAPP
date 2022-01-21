@@ -17,12 +17,13 @@ import com.parkir_baru.R;
 public class SpinnerTunjActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String nama;
     private TextView et_tampil;
-    private Button hasil;
+    private Button hasil, btn_hari;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner_tunj);
         hasil = findViewById(R.id.hasil);
+        btn_hari = findViewById(R.id.btn_hari);
         //nama mall ditangkep
         nama = getIntent().getStringExtra("nama");
         et_tampil=findViewById(R.id.et_tampil);
@@ -40,8 +41,16 @@ public class SpinnerTunjActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SpinnerTunjActivity.this, TunjunganActivity.class);
-                i.putExtra("nama", nama);//ini lempar nama mall
-                i.putExtra("bulan", spinner.getSelectedItem().toString());//ini lempar nama mall
+                i.putExtra("nama", nama);//ini lempar nama mall, nantik diolah sm php
+                i.putExtra("bulan", spinner.getSelectedItem().toString());//ini lempar bulan ke php
+                startActivity(i);
+            }
+        });
+        btn_hari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SpinnerTunjActivity.this, HariActivity.class);
+                i.putExtra("nama", nama); //ini lempar nama mall lagi, buat tampil di activity_hari
                 startActivity(i);
             }
         });

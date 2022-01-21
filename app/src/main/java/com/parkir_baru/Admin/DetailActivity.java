@@ -30,10 +30,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil nama bln + mall, u/laporanyya
-    private RecyclerView lvtunj;
-    private String nama;
-    private String bulan;
+public class DetailActivity extends AppCompatActivity { //ini u/ tampil laporan per hari
+    private RecyclerView lvdetail;
+    private String nama; //buat nerima dari hari activity, lalu proses php
+    private String tanggalawal; //buat nerima dari hari activity, lalu proses php
+    private String tanggalakir; //buat nerima dari hari activity, lalu proses php
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
     ArrayList<HashMap<String, String>> list_data;
@@ -41,20 +42,20 @@ public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil na
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tunjungan);  //   ADAPTER LISTTUNJ ADA DIBAWAH
-
+        setContentView(R.layout.activity_detail); //ADAPTER LIST DETAIL ADA DIBAWAH
 
         //tangkep
         nama = getIntent().getStringExtra("nama");
-        bulan = getIntent().getStringExtra("bulan");
-        //mulai rv
-        String url = ServerURL.url+ "simpanadmin.php?mode=bacatunj";
-        lvtunj = findViewById(R.id.lvtunj);
+        tanggalawal = getIntent().getStringExtra("tanggalawal");
+        tanggalakir = getIntent().getStringExtra("tanggalakir");
+        //mulai RV
+        String url = ServerURL.url+ "simpanadmin.php?mode=bacadetail";
+        lvdetail = findViewById(R.id.lvtdetail);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        lvtunj.setLayoutManager(llm);
+        lvdetail.setLayoutManager(llm);
 
-        requestQueue = Volley.newRequestQueue(TunjunganActivity.this);
+        requestQueue = Volley.newRequestQueue(DetailActivity.this);
         list_data = new ArrayList<HashMap<String, String>>();
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -74,17 +75,19 @@ public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil na
                         map.put("jamkeluar", json.getString("jamkeluar"));
                         map.put("harga", json.getString("harga"));
                         list_data.add(map);
-                        AdapterListTunj adapter = new AdapterListTunj(TunjunganActivity.this, list_data);
-                        lvtunj.setAdapter(adapter);
+                        AdapterListDetail adapter = new AdapterListDetail(DetailActivity.this, list_data);
+                        lvdetail.setAdapter(adapter);
                     }
+
                 }catch (Exception e){
-                    Toast.makeText(TunjunganActivity.this, "aaa", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DetailActivity.this, "aaa", Toast.LENGTH_LONG).show();
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TunjunganActivity.this, "bbb", Toast.LENGTH_LONG).show();
+                Toast.makeText(DetailActivity.this, "bbb", Toast.LENGTH_LONG).show();
             }
         })
         {
@@ -92,29 +95,31 @@ public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil na
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("nama",nama);
-                params.put("bulan", bulan);
+                params.put("tanggalawal", tanggalawal);
+                params.put("tanggalakir", tanggalakir);
                 return params;
             }
         };
         requestQueue.add(stringRequest);
-    }//ini oncrate bundle
+    }//ini Oncrate Bundle
 
-    public static class AdapterListTunj extends RecyclerView.Adapter<AdapterListTunj.ViewHolder> {
+    //ADAPTER
+    public static class AdapterListDetail extends RecyclerView.Adapter<DetailActivity.AdapterListDetail.ViewHolder> {
         Context contex;
         ArrayList<HashMap<String, String>> list_data;
-        public AdapterListTunj(TunjunganActivity mainActivity, ArrayList<HashMap<String, String>> list_data){
+        public AdapterListDetail(DetailActivity mainActivity, ArrayList<HashMap<String, String>> list_data){
             this.contex = mainActivity;
             this.list_data = list_data;
         }
         @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_tunj, null);
+        public DetailActivity.AdapterListDetail.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_detail, null);
             return new ViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull DetailActivity.AdapterListDetail.ViewHolder holder, int position) {
             holder.tv_plat.setText(list_data.get(position).get("plat"));
             holder.tv_lantai.setText(list_data.get(position).get("lantai"));
             holder.tv_hari.setText(list_data.get(position).get("hari"));

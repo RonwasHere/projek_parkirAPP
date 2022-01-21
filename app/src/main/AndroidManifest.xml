@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Parkir_Baru">
-        <activity android:name=".Admin.LaporanActivity"></activity>
+        <activity android:name=".Admin.DetailActivity"></activity>
+        <activity android:name=".Admin.HariActivity" />
+        <activity android:name=".Admin.LaporanActivity" />
         <activity android:name=".Admin.TunjunganActivity" />
         <activity android:name=".Admin.SpinnerTunjActivity" />
         <activity android:name=".MallActivity" />
@@ -23,9 +25,7 @@
         <activity android:name=".Admin.EditActivity" />
         <activity android:name=".Admin.LihatActivity" />
         <activity android:name=".Admin.SimpanActivity" />
-        <activity android:name=".Admin.AdminActivity">
-
-        </activity> <!-- menu admin -->
+        <activity android:name=".Admin.AdminActivity" /> <!-- menu admin -->
         <activity android:name=".BayarActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".DenahActivity" />

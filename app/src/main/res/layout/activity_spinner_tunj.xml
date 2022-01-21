@@ -64,4 +64,17 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner1">
     </Button>
 
+    <Button
+        android:id="@+id/btn_hari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Per-Hari"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

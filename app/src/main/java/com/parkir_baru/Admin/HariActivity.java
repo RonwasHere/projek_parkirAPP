@@ -21,12 +21,11 @@ import java.util.Locale;
 
 public class HariActivity extends AppCompatActivity {
     private String nama;
-    private String tanggalawal; //ini nantik buat dilempar
-    private String tanggalakir;
     private TextView tvtampil;
     private Button btngo;
     private ImageView calender, calender2;
     private EditText tglawal, tglakir;  //tglawal & tglakir ==> hrs dilempar ke php u/query
+                                        //ini ada nilainya jadi bisa dilempar (lihar brs 103, 104)
     final Calendar cal = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -38,7 +37,7 @@ public class HariActivity extends AppCompatActivity {
         }
 
         private void tampiltgl() {
-            String tmp = "dd/MM/yyyy";
+            String tmp = "yyyy-MM-dd";
             SimpleDateFormat sdf = new SimpleDateFormat(tmp, Locale.getDefault());
             tglawal.setText(sdf.format(cal.getTime()));
         }
@@ -55,7 +54,7 @@ public class HariActivity extends AppCompatActivity {
     };
 
     private void tampiltgl2() {
-        String tmp = "dd/MM/yyyy";
+        String tmp = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(tmp, Locale.getDefault());
         tglakir.setText(sdf.format(cale2.getTime()));
     }
@@ -101,8 +100,9 @@ public class HariActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(HariActivity.this, DetailActivity.class);
                 i.putExtra("nama", nama); //ini lempar nama mall lagi, buat proses php
-                i.putExtra("tanggalawal", tanggalawal); //lempar tanggal awal ke php
-                i.putExtra("tanggalakir", tanggalakir); //lempar tanggal akir ke php
+                i.putExtra("tanggalawal", tglawal.getText().toString()); //lempar tanggal awal ke php + ke detail activity
+                i.putExtra("tanggalakir", tglakir.getText().toString()); //lempar tanggal akir ke php + ke detail activity
+                //"name" yg lempar dan tangkep hrs sama
                 startActivity(i);
             }
         });

@@ -161,7 +161,7 @@ public class PesanActivity extends AppCompatActivity {
     }
 
     private void tampiltgl(){ //ini buat tampil tanggal
-        String tmp = "dd/MM/yyyy";
+        String tmp = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(tmp, Locale.getDefault());
         tglcalender.setText(sdf.format(cal.getTime()));
     }

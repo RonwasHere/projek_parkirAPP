@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.parkir_baru.BayarActivity;
 import com.parkir_baru.DenahActivity;
 import com.parkir_baru.HistoryActivity;
+import com.parkir_baru.HomeActivity;
+import com.parkir_baru.LoginActivity;
 import com.parkir_baru.PesanActivity;
 import com.parkir_baru.R;
 
@@ -34,21 +36,27 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent i;
+
         switch (v.getId()) {
             case R.id.c1://tambah data mall
-                i = new Intent(this, SimpanActivity.class);
-                startActivity(i);
+                Intent q;
+                q = new Intent(this, SimpanActivity.class);
+                startActivity(q);
                 break;
             case R.id.c2://Lihat data mall
-                i = new Intent(this, LihatActivity.class);
-                startActivity(i);
+                Intent w;
+                w = new Intent(this, LihatActivity.class);
+                startActivity(w);
                 break;
             case R.id.c3://laporan data mall
-                i = new Intent(this, LaporanActivity.class);
-                startActivity(i);
+                Intent e;
+                e = new Intent(this, LaporanActivity.class);
+                startActivity(e);
                 break;
             case R.id.c4: //log out, keluar aplikasi
+                Intent r;
+                r = new Intent(AdminActivity.this, LoginActivity.class);
+                startActivity(r);
                 finish();
                 break;
         }

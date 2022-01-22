@@ -41,29 +41,37 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent i;
+
         switch (v.getId()){
             case R.id.c1:
+                Intent i;
                 i = new Intent(this,PesanActivity.class);
                 startActivity(i);
                 break;
             case R.id.c2://bayar
-                i = new Intent(this,BayarActivity.class);
-                startActivity(i);
+                Intent k;
+                k = new Intent(this,BayarActivity.class);
+                startActivity(k);
                 break;
             case R.id.c3://history
-                i = new Intent(this,HistoryActivity.class);
-                startActivity(i);
+                Intent j;
+                j = new Intent(this,HistoryActivity.class);
+                startActivity(j);
                 break;
             case R.id.c4: //denah
-                i = new Intent(this,DenahActivity.class);
-                startActivity(i);
+                Intent l;
+                l = new Intent(this,DenahActivity.class);
+                startActivity(l);
                 break;
             case R.id.c5://mall
-                i = new Intent(this,MallActivity.class);
-                startActivity(i);
+                Intent d;
+                d = new Intent(this,MallActivity.class);
+                startActivity(d);
                 break;
             case R.id.c6: //logout
+                Intent y;
+                y = new Intent(HomeActivity.this,LoginActivity.class);
+                startActivity(y);
                 finish();
                 break;
         }

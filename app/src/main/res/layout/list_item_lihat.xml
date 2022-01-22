@@ -11,6 +11,7 @@
         app:cardBackgroundColor="#E3EAEF"
         app:contentPadding="20dp"
         app:cardCornerRadius="40dp"
+        android:layout_margin="20dp"
         android:id="@+id/cv_mall">
 
         <RelativeLayout

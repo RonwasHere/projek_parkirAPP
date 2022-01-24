@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class AdapterListMacam extends RecyclerView.Adapter<AdapterListMacam.ViewHolder> {
     Context contex;
     ArrayList<HashMap<String, String>> list_data;
-    String urlGambarPlgn = "http://192.168.100.7/barupa/gambar/";
+    String urlGambarPlgn = ServerURL.url+"gambar/";
     public AdapterListMacam(MallActivity mallActivity, ArrayList<HashMap<String, String>> list_data) {
         this.contex = mallActivity;
         this.list_data = list_data;

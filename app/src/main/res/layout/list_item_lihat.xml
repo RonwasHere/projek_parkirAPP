@@ -60,7 +60,8 @@
                         android:id="@+id/tv_alamat"
                         android:textSize="25dp"
                         android:textColor="#000"
-                        android:padding="10dp"/>
+                        android:padding="5dp"
+                        android:maxLength="400"/>
 
                 </LinearLayout>
 
@@ -68,6 +69,7 @@
 
 
             <ImageButton
+                android:visibility="gone"
                 android:id="@+id/tv_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -13,6 +13,7 @@
         android:layout_height="207dp"
         android:background="@drawable/wave"/>
     <TextView
+        android:layout_margin="5dp"
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +48,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_home_besar"/>
+                    android:src="@drawable/icons8_add_property_60"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,7 +87,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_storefront_24"/>
+                    android:src="@drawable/icons8_building_50"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,7 +126,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_folder_24"/>
+                    android:src="@drawable/icons8_folder_48"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -157,7 +158,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_home_besar"/>
+                    android:src="@drawable/icons8_logout"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

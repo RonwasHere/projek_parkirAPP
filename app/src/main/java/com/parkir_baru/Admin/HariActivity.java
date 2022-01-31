@@ -5,26 +5,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.parkir_baru.PesanActivity;
 import com.parkir_baru.R;
+import com.parkir_baru.ServerURL;
 
+import org.json.JSONObject;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class HariActivity extends AppCompatActivity {
+
     private String nama;
     private TextView tvtampil;
     private Button btngo;
     private ImageView calender, calender2;
-    private EditText tglawal, tglakir;  //tglawal & tglakir ==> hrs dilempar ke php u/query
+    private long vara, varb; //unutk pengecekan tanggal awal + akir
+    private TextView tglawal, tglakir;  //tglawal & tglakir ==> hrs dilempar ke php u/query
                                         //ini ada nilainya jadi bisa dilempar (lihar brs 103, 104)
     final Calendar cal = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -40,8 +57,15 @@ public class HariActivity extends AppCompatActivity {
             String tmp = "yyyy-MM-dd";
             SimpleDateFormat sdf = new SimpleDateFormat(tmp, Locale.getDefault());
             tglawal.setText(sdf.format(cal.getTime()));
+            try {//ini untuk pengecekan tgl awal, agar tgl awal tidak lebih bsr dr tgl akir
+                vara = sdf.parse(tglawal.getText().toString()).getTime();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     };//end date picker calender
+
+
     final Calendar cale2 = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -57,6 +81,11 @@ public class HariActivity extends AppCompatActivity {
         String tmp = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(tmp, Locale.getDefault());
         tglakir.setText(sdf.format(cale2.getTime()));
+        try { ///ini untuk pengecekan tgl awal, agar tgl awal tidak lebih bsr dr tgl akir
+            varb = sdf.parse(tglakir.getText().toString()).getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -72,6 +101,7 @@ public class HariActivity extends AppCompatActivity {
         nama = getIntent().getStringExtra("nama");
         tvtampil = findViewById(R.id.tvtampil);
         tvtampil.setText(nama);//ngeset jadi nama mall, begitu dirun muncul mall tunjungan
+
 
         //tgl awal
         calender.setOnClickListener(new View.OnClickListener() {
@@ -98,15 +128,18 @@ public class HariActivity extends AppCompatActivity {
         btngo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HariActivity.this, DetailActivity.class);
-                i.putExtra("nama", nama); //ini lempar nama mall lagi, buat proses php
-                i.putExtra("tanggalawal", tglawal.getText().toString()); //lempar tanggal awal ke php + ke detail activity
-                i.putExtra("tanggalakir", tglakir.getText().toString()); //lempar tanggal akir ke php + ke detail activity
-                //"name" yg lempar dan tangkep hrs sama
-                startActivity(i);
+                if(vara > varb){
+                    Toast.makeText(HariActivity.this, "tgl awal tidak boleh lebih dari tgl akir", Toast.LENGTH_LONG).show();
+                }else {
+                    //kalok tgl awal kecil, brati muncul
+                    Intent i = new Intent(HariActivity.this, DetailActivity.class);
+                    i.putExtra("nama", nama); //ini lempar nama mall lagi, buat proses php
+                    i.putExtra("tanggalawal", tglawal.getText().toString()); //lempar tanggal awal ke php + ke detail activity
+                    i.putExtra("tanggalakir", tglakir.getText().toString()); //lempar tanggal akir ke php + ke detail activity
+                    //"name" yg lempar dan tangkep hrs sama
+                    startActivity(i);
+                }
             }
         });
     }//ini Oncrate Bundle
-
-
 }

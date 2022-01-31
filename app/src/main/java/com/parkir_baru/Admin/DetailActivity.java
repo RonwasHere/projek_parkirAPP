@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,20 +65,20 @@ public class DetailActivity extends AppCompatActivity { //ini u/ tampil laporan 
                 try {
                     JSONObject jsoonRootObject = new JSONObject(response);
                     JSONArray jsonArray = jsoonRootObject.optJSONArray("result");
-                    for (int a=0; a < jsonArray.length(); a++){
-                        JSONObject json = jsonArray.getJSONObject(a);
-                        HashMap<String, String> map = new HashMap<String, String>();
-                        map.put("plat", json.getString("plat"));
-                        map.put("lantai", json.getString("lantai"));
-                        map.put("hari", json.getString("hari"));
-                        map.put("tanggal", json.getString("tanggal"));
-                        map.put("jammasuk", json.getString("jammasuk"));
-                        map.put("jamkeluar", json.getString("jamkeluar"));
-                        map.put("harga", json.getString("harga"));
-                        list_data.add(map);
-                        AdapterListDetail adapter = new AdapterListDetail(DetailActivity.this, list_data);
-                        lvdetail.setAdapter(adapter);
-                    }
+                        for (int a=0; a < jsonArray.length(); a++){
+                            JSONObject json = jsonArray.getJSONObject(a);
+                            HashMap<String, String> map = new HashMap<String, String>();
+                            map.put("plat", json.getString("plat"));
+                            map.put("lantai", json.getString("lantai"));
+                            map.put("hari", json.getString("hari"));
+                            map.put("tanggal", json.getString("tanggal"));
+                            map.put("jammasuk", json.getString("jammasuk"));
+                            map.put("jamkeluar", json.getString("jamkeluar"));
+                            map.put("harga", json.getString("harga"));
+                            list_data.add(map);
+                            AdapterListDetail adapter = new AdapterListDetail(DetailActivity.this, list_data);
+                            lvdetail.setAdapter(adapter);
+                        }//tutup for
 
                 }catch (Exception e){
                     Toast.makeText(DetailActivity.this, "aaa", Toast.LENGTH_LONG).show();

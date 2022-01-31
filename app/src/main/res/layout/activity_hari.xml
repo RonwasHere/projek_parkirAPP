@@ -14,6 +14,7 @@
         android:orientation="vertical"
         android:padding="20dp">
         <TextView
+            android:layout_margin="5dp"
             android:id="@+id/tvtampil"
             android:gravity="center"
             android:layout_width="match_parent"
@@ -21,6 +22,15 @@
             android:text="nama mall"
             android:textColor="@color/black"
             android:textSize="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/reddd"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text=
+                "Harap masukan tanggal awal, tidak lebih besar dari tanggal akir...">
+        </TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,10 +47,13 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/calendar"
                 android:padding="20dp" />
-            <EditText
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="30dp"
                 android:id="@+id/tglawal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
@@ -58,9 +71,11 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/calendar"
                 android:padding="20dp" />
-            <EditText
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="30dp"
                 android:id="@+id/tglakir"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <Button

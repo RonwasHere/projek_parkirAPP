@@ -35,7 +35,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class PesanActivity extends AppCompatActivity {
-    private EditText nama_mall, plat, lantai, hari, tglcalender, jammasuk, jamkeluar;
+    private EditText nama_mall, plat, lantai, tglcalender, jammasuk, jamkeluar;
     private ImageView calender, masuk, keluar;
     private Button btnSimpan;
     int thour, tminute;
@@ -58,7 +58,7 @@ public class PesanActivity extends AppCompatActivity {
         nama_mall = findViewById(R.id.nama_mall);
         plat = findViewById(R.id.plat);
         lantai = findViewById(R.id.lantai);
-        hari = findViewById(R.id.hari);
+
         calender = findViewById(R.id.calender);
         masuk = findViewById(R.id.masuk);
         keluar = findViewById(R.id.keluar);
@@ -150,7 +150,7 @@ public class PesanActivity extends AppCompatActivity {
                 params.put("nama_mall", nama_mall.getText().toString());
                 params.put("plat", plat.getText().toString());
                 params.put("lantai", lantai.getText().toString());
-                params.put("hari", hari.getText().toString());
+
                 params.put("tanggal", tglcalender.getText().toString());
                 params.put("jammasuk", jammasuk.getText().toString());
                 params.put("jamkeluar", jamkeluar.getText().toString());

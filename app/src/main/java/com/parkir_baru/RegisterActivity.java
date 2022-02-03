@@ -17,16 +17,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.parkir_baru.ServerURL.url;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText nama, alamat, nomer_telepon, jenis_kelamin, username, password;
     private Button btnRegist;
-    private static String URL_REGIST = ServerURL.url+"register.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,49 +45,42 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { 
-                Regist();
+                Regist(ServerURL.url+"register.php?mode=simpan");
             }
         });
     } // ini oncrate bundle
-    private void Regist(){
-        final String nama = this.nama.getText().toString().trim();
-        final String alamat = this.alamat.getText().toString().trim();
-        final String nomer_telepon = this.nomer_telepon.getText().toString().trim();
-        final String jenis_kelamin = this.jenis_kelamin.getText().toString().trim();
-        final String username = this.username.getText().toString().trim();
-        final String password = this.password.getText().toString().trim();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
-                new Response.Listener<String>() {
+    private void Regist(String url){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String success = jsonObject.getString("success");
-                            if(success.equals("1")){
-                                Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_LONG).show();
-                            }
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                            Toast.makeText(RegisterActivity.this, "Register Error "+e.toString(), Toast.LENGTH_LONG).show();
+                            JSONObject jsoonRootObject = new JSONObject(response);
+                            JSONArray jsonArray = jsoonRootObject.optJSONArray("result");
+                            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+                            String status = jsonObject.optString("status").trim();
+                            Toast.makeText(RegisterActivity.this, status, Toast.LENGTH_LONG).show();
+
+                        }catch (Exception e){
+                            Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegisterActivity.this, "Register Error "+error.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
             }
         })
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("nama", nama);
-                params.put("alamat", alamat);
-                params.put("nomer_telepon", nomer_telepon);
-                params.put("jenis_kelamin", jenis_kelamin);
-                params.put("username", username);
-                params.put("password", password);
+                params.put("nama", nama.getText().toString());
+                params.put("alamat", alamat.getText().toString());
+                params.put("nomer_telepon", nomer_telepon.getText().toString());
+                params.put("jenis_kelamin", jenis_kelamin.getText().toString());
+                params.put("username", username.getText().toString());
+                params.put("password", password.getText().toString());
                 return params;
             }
         };

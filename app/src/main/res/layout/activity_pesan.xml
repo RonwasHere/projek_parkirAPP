@@ -38,16 +38,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/lantai"
         android:inputType="number"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Masukkan Hari "
-        android:textSize="30dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/hari"
-        android:inputType="text"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

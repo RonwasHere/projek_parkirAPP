@@ -8,8 +8,18 @@
     tools:context=".Admin.TunjunganActivity">
 
 
-
+    <TextView
+        android:id="@+id/jdl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="DATA-DATA MALL PER BULAN"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black">
+    </TextView>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/jdl"
         android:id="@+id/lvtunj"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,7 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".Admin.DetailActivity">
 
+    <TextView
+        android:id="@+id/jdl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="DATA-DATA MALL PER HARI"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black">
+    </TextView>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/jdl"
         android:id="@+id/lvtdetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

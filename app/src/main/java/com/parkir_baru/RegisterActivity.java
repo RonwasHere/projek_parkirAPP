@@ -3,6 +3,7 @@ package com.parkir_baru;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,6 +61,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                             String status = jsonObject.optString("status").trim();
                             Toast.makeText(RegisterActivity.this, status, Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(i);
 
                         }catch (Exception e){
                             Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();

@@ -13,20 +13,118 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="DATA-DATA MALL PER BULAN"
+        android:text="DATA TRANSAKSI PER BULAN"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/black">
     </TextView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/jdl"
-        android:id="@+id/lvtunj"
+
+
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="false"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp" />
+        android:layout_below="@id/jdl"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/jdl">
+
+            <LinearLayout
+                android:id="@+id/tbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/teal_700"
+                >
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="PLAT NOMOR"
+                    android:padding="3dp"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="LANTAI"
+                    android:padding="3dp"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="TANGGAL"
+                    android:padding="3dp"
+                    android:gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="JAM MASUK"
+                    android:padding="3dp"
+                    android:gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="JAM KELUAR"
+                    android:gravity="center_horizontal"
+                    android:padding="3dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="HARGA"
+                    android:gravity="center_horizontal"
+                    android:padding="3dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/jdl"
+                android:id="@+id/lvtunj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="false"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
 
 </RelativeLayout>

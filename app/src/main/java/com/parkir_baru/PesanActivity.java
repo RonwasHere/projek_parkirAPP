@@ -9,35 +9,51 @@ import android.media.Image;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class PesanActivity extends AppCompatActivity {
-    private EditText nama_mall, plat, lantai, tglcalender, jammasuk, jamkeluar;
+public class PesanActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private EditText plat, lantai, tglcalender, jammasuk, jamkeluar;
     private ImageView calender, masuk, keluar;
     private Button btnSimpan;
+    private Spinner sp1;
+    private String nama;
+    ArrayList<String> listmall = new ArrayList<>();
+    ArrayAdapter<String> mallAdapter;
+    RequestQueue requestQueue;
+    String url = ServerURL.url+"spinmall.php";
     int thour, tminute;
     final Calendar cal = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -55,16 +71,43 @@ public class PesanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesan);
 
-        nama_mall = findViewById(R.id.nama_mall);
         plat = findViewById(R.id.plat);
         lantai = findViewById(R.id.lantai);
-
+        sp1 = findViewById(R.id.sp1);
         calender = findViewById(R.id.calender);
         masuk = findViewById(R.id.masuk);
         keluar = findViewById(R.id.keluar);
         jammasuk = findViewById(R.id.jammasuk);
         jamkeluar = findViewById(R.id.jamkeluar);
         btnSimpan = findViewById(R.id.btnSimpan);
+        requestQueue = Volley.newRequestQueue(this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("mall");
+                    for (int i = 0; i <jsonArray.length() ; i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String namaMall = jsonObject.getString("nama_mall");
+                        listmall.add(namaMall);
+                        mallAdapter = new ArrayAdapter<>(PesanActivity.this,
+                                android.R.layout.simple_spinner_item, listmall);
+                        mallAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp1.setAdapter(mallAdapter);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(jsonObjectRequest);
+        sp1.setOnItemSelectedListener(this);
+
         calender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,7 +190,7 @@ public class PesanActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("nama_mall", nama_mall.getText().toString());
+                params.put("nama_mall", nama);
                 params.put("plat", plat.getText().toString());
                 params.put("lantai", lantai.getText().toString());
 
@@ -166,4 +209,13 @@ public class PesanActivity extends AppCompatActivity {
         tglcalender.setText(sdf.format(cal.getTime()));
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        nama = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

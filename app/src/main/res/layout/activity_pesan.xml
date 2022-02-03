@@ -11,14 +11,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Masukkan nama Mall "
+        android:text="Pilih nama Mall "
         android:paddingTop="20dp"
         android:textSize="30dp"/>
-    <EditText
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nama_mall"
-        android:inputType="text"/>
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/sp1"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+        </Spinner>
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -73,7 +73,6 @@ public class HistoryActivity extends AppCompatActivity {
                         map.put("nama_mall", json.getString("nama_mall"));
                         map.put("plat", json.getString("plat"));
                         map.put("lantai", json.getString("lantai"));
-                        map.put("hari", json.getString("hari"));
                         map.put("tanggal", json.getString("tanggal"));
                         map.put("jammasuk", json.getString("jammasuk"));
                         map.put("jamkeluar", json.getString("jamkeluar"));

@@ -32,6 +32,7 @@ import java.util.Map;
 
 public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil nama bln + mall, u/laporanyya
     private RecyclerView lvtunj;
+    private TextView jdl;
     private String nama;
     private String bulan;
     private StringRequest stringRequest;
@@ -43,10 +44,47 @@ public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil na
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tunjungan);  //   ADAPTER LISTTUNJ ADA DIBAWAH
 
-
+        jdl = findViewById(R.id.jdl);
         //tangkep
         nama = getIntent().getStringExtra("nama");
         bulan = getIntent().getStringExtra("bulan");
+
+        if(bulan.equals("01")){
+            jdl.setText("DATA TRANSAKSI PER BULAN JANUARI");
+        }else if(bulan.equals("02"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN PEBRUARI");
+        }else if(bulan.equals("03"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN MARET");
+        }else if(bulan.equals("04"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN APRIL");
+        }else if(bulan.equals("05"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN MEI");
+        }else if(bulan.equals("06"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN JUNI");
+        }else if(bulan.equals("07"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN JULI");
+        }else if(bulan.equals("08"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN AGUSTUS");
+        }else if(bulan.equals("09"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN SEPTEMBER");
+        }else if(bulan.equals("10"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN OKTOBER");
+        }else if(bulan.equals("11"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN NOVEMBER");
+        }else if(bulan.equals("12"))
+        {
+            jdl.setText("DATA TRANSAKSI PER BULAN DESEMBER");
+        }
         //mulai rv
         String url = ServerURL.url+ "simpanadmin.php?mode=bacatunj";
         lvtunj = findViewById(R.id.lvtunj);
@@ -109,7 +147,7 @@ public class TunjunganActivity extends AppCompatActivity { //ini untuk nampil na
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_tunj, null);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_tunjungan, parent, false);
             return new ViewHolder(view);
         }
 

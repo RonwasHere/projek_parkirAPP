@@ -115,7 +115,7 @@ public class DetailActivity extends AppCompatActivity { //ini u/ tampil laporan 
         @NonNull
         @Override
         public DetailActivity.AdapterListDetail.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_detail, null);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_tunjungan, null);
             return new ViewHolder(view);
         }
 

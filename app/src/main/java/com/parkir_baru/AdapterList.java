@@ -53,7 +53,7 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ViewHolder> {
         holder.tv_nama_mall.setText(list_data.get(position).get("nama_mall"));
         holder.tv_plat.setText(list_data.get(position).get("plat"));
         holder.tv_lantai.setText(list_data.get(position).get("lantai"));
-        holder.tv_hari.setText(list_data.get(position).get("hari"));
+
         holder.tv_tanggal.setText(list_data.get(position).get("tanggal"));
         holder.tv_jammasuk.setText(list_data.get(position).get("jammasuk"));
         holder.tv_jamkeluar.setText(list_data.get(position).get("jamkeluar"));
@@ -124,7 +124,7 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ViewHolder> {
         TextView tv_nama_mall;
         TextView tv_plat;
         TextView tv_lantai;
-        TextView tv_hari;
+
         TextView tv_tanggal;
         TextView tv_jammasuk;
         TextView tv_jamkeluar;
@@ -137,7 +137,7 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ViewHolder> {
             tv_nama_mall = itemView.findViewById(R.id.tv_nama_mall);
             tv_plat = itemView.findViewById(R.id.tv_plat);
             tv_lantai = itemView.findViewById(R.id.tv_lantai);
-            tv_hari = itemView.findViewById(R.id.tv_hari);
+
             tv_tanggal = itemView.findViewById(R.id.tv_tanggal);
             tv_jammasuk = itemView.findViewById(R.id.tv_jammasuk);
             tv_jamkeluar = itemView.findViewById(R.id.tv_jamkeluar);

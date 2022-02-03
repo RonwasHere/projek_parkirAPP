@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nama_mall"
+        android:text="PLAT NOMER"
+        android:id="@+id/tv_plat"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_plat"
+        android:text="00 "
+        android:id="@+id/tv_lantai"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_hari"
+        android:text="TANGGAL "
+        android:id="@+id/tv_tanggal"
+        android:textSize="17sp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tanggal"
+        android:text="JAM MASUK"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:id="@+id/tv_jammasuk"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/tv_jamkeluar"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_jammasuk"
+        android:text="JAM KELUAR"
+        android:textColor="#000"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Harga"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:id="@+id/tv_harga"/>
+
+</LinearLayout>

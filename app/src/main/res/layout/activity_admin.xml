@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Welcome To Menu"
+        android:text="Selamat Datang di Menu"
         android:textSize="30dp"/>
     <GridLayout
         android:layout_below="@+id/title_view"
@@ -162,7 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Log Out "
+                    android:text="Keluar "
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:textAlignment="center"/>

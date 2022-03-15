@@ -12,6 +12,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="15dp">
+        <TextView
+            android:id="@+id/jdl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="RIWAYAT PEMESANAN TIKET"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lvtiket"
                 android:layout_width="match_parent"

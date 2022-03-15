@@ -7,7 +7,18 @@
     android:id="@+id/activity_mall"
     tools:context=".MallActivity">
 
+    <TextView
+        android:id="@+id/jdll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="MACAM-MACAM MALL"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black">
+    </TextView>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/jdll"
         android:id="@+id/lvmacammall"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
